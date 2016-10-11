@@ -41,7 +41,7 @@ export class SlimLoadingBarService {
     constructor() {
         this.observable = new Observable<SlimLoadingBarEvent>((subscriber:Subscriber<SlimLoadingBarEvent>) => {
             this.subscriber = subscriber;
-        });
+        }).share();
     }
 
     set progress(value:number) {
